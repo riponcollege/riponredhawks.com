@@ -19,7 +19,7 @@ get_header();
 	<div class="wrap group">
 
 		<div class="news">
-			<h3>Ripon <span>News</span></h3>
+			<h3>Redhawks <span>News</span></h3>
 			<?php
 			query_posts( 'posts_per_page=2' );
 			if ( have_posts() ) {
@@ -42,7 +42,7 @@ get_header();
 		</div>
 
 		<div class="events">
-			<h3>Ripon <span>Events</span></h3>
+			<h3>Redhawks <span>Events</span></h3>
 			<div class="events-widget">
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-events')) : ?>[events widget]<?php endif; ?>
 			</div>
@@ -51,7 +51,7 @@ get_header();
 
 		<div class="spotlight">
 
-			<h3>Ripon <span>Spotlight</span></h3>
+			<h3>Redhawk <span>Spotlight</span></h3>
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('spotlight')) : ?>[spotlight widgets]<?php endif; ?>
 		
 		</div>
