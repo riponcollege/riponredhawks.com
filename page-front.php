@@ -59,43 +59,6 @@ get_header();
 	</div>
 
 	<?php the_infographic(); ?>
-
-	<div class="social">
-	 	<div class="wrap group">
-		
-			<h3>Connect with Ripon on <span>Social Media</span></h3>
-			<div class="icons">
-				<a href="http://www.facebook.com/ripon.college"><img src="<?php print get_template_directory_uri() ?>/img/social-facebook.png"></a>
-				<a href="https://twitter.com/riponcollege"><img src="<?php print get_template_directory_uri() ?>/img/social-twitter.png"></a>
-				<a href="http://www.youtube.com/riponcollegevideo"><img src="<?php print get_template_directory_uri() ?>/img/social-youtube.png"></a>
-				<a href="http://instagram.com/riponcollege"><img src="<?php print get_template_directory_uri() ?>/img/social-instagram.png"></a>
-				<a href="https://www.flickr.com/photos/ripon_college/"><img src="<?php print get_template_directory_uri() ?>/img/social-flickr.png"></a>
-				<a href="http://www.linkedin.com/groups?home=&gid=4646327&trk=anet_ug_hm"><img src="<?php print get_template_directory_uri() ?>/img/social-linkedin.png"></a>
-			</div>
-			
-			<!--
-			<div class="feeds">
-				<div class="twitter group">
-					<h4>@riponcollege</h4>
-					<div class="feed">
-						<?php //twitter_posts() ?>
-					</div>
-				</div>
-
-				<div class="facebook">
-					<?php //facebook_feed() ?>
-				</div>
-
-				<div class="instagram">
-					<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('social')) : ?>
-					[ add social widgets ]
-					<?php endif; ?>
-				</div>
-			</div>
-			-->
-
-		</div>
-	</div>
 	
 	<div class="wrap">
 		<?php the_photo_grid( 18 ); ?>
