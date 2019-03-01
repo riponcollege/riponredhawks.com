@@ -1,0 +1,168 @@
+
+
+.footer {
+	background-color: $grey;
+	color: white;
+	text-align: center;
+	padding: 10px 20px;
+
+	nav {
+		@include wrap-main;
+		@include clearfix;
+
+		li:first-child a {
+			border-top: 0;
+
+			@include respond-to( 768px ) {
+				border-left: 0;
+			}
+		}
+
+		@include respond-to( 480px ) {
+			li:nth-child(2) a, li:nth-child(4) a, li:nth-child(6) a {
+				border-left: 4px solid $red-dark;
+				margin-bottom: 5px;
+			}
+		}
+
+		@include respond-to( 768px ) {
+			li:nth-child(4) a {
+				border-left: 0;
+			}
+
+			li:nth-child(2) a, li:nth-child(3) a, li:nth-child(5) a, li:nth-child(6) a {
+				border-left: 4px solid $red-dark;
+				margin-bottom: 5px;
+			}
+		}
+
+		@include respond-to( 1100px ) {
+			li:nth-child(1) a, li:nth-child(2) a, li:nth-child(3) a, li:nth-child(4) a, li:nth-child(5) a, li:nth-child(6) a {
+				border-left: 4px solid $red-dark;
+				margin-bottom: 0;
+			}
+
+			li:nth-child(1) a {
+				border-left: 0;
+			}
+		}
+
+		a {
+			color: white;
+			padding: 15px 5px;
+			display: block;
+			text-decoration: none;
+			transition: color 400ms ease-in-out;
+			border-top: 4px solid $red-dark;
+			font-size: .85em;
+			
+			span {
+				display: block;
+				font-size: 1.8em;
+				line-height: 1.2em;
+				text-transform: uppercase;
+				@include font-medium;
+			}
+
+			&:hover {
+				color: lighten( $grey, 50% );
+			}
+
+			@include respond-to( 480px ) {
+				float: left;
+				width: 50%;
+				border: 0;
+
+			}
+
+			@include respond-to( 768px ) {
+				width: 33%;
+				border: 0;
+			}
+
+			@include respond-to( 1100px ) {
+				width: 16.5%;
+				border-left: 4px solid $red-dark;
+			}
+		}
+	}
+
+	&.fixed {
+		@include respond-to( 1100px ) {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+		}
+	}
+}
+
+
+.footer-badge {
+	display: none;
+
+	@include respond-to( 768px ) {
+		display: block;
+		height: 45px;
+		background: $red-dark url(../img/footer-badge-text.png) center center no-repeat;
+		text-indent: -100%;
+	}
+}
+
+
+.colophon {
+	padding: 20px;
+	font-size: .9em;
+	text-align: center;
+	@include clearfix;
+
+	.campus-map {
+		display: block;
+		padding: 20px;
+		line-height: 40px;
+		margin-top: 10px;
+		background: url(../img/map-icon.jpg) right center no-repeat;
+		text-align: left;
+	}
+
+	.fold {
+		display: block;
+	}
+
+	.electronic img {
+		max-width: 10%;
+	}
+	
+	@include respond-to( 768px ) {
+		.addresses {
+			float: left;
+			width: 40%;
+			padding: 10px 0;
+			margin-bottom: 50px;
+		}
+
+		.electronic {
+			float: right;
+			width: 25%;
+			padding: 10px 0;
+		}
+		
+		.campus-map {
+			float: left;
+			width: 35%;
+			margin-top: 0;
+		}
+	}
+
+	@include respond-to( 1024px ) {
+		.campus-map {
+			width: 275px;
+		}
+
+		.fold {
+			display: inline;
+		}
+	}
+}
+

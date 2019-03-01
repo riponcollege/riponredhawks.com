@@ -1,0 +1,113 @@
+
+
+.infographic-title {
+	padding: 20px 20px 15px 20px;
+	text-align: center;
+}
+
+.infographic {
+	padding: 20px 15px;
+	background-position: center center;
+	background-size: cover;
+	@include clearfix;
+	
+	.stat {
+		background: white;
+		min-height: 220px;
+		margin: 10px 1%;
+		box-shadow: inset 0 0 12px #666;
+		position: relative;
+		text-align: center;
+		padding: 25px 0 115px;
+
+		.stat-content {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			h3, h4 {
+				padding: 0;
+			}
+			
+			h3 {
+				@include font-medium;
+				font-size: 45px;
+				color: $red-dark;
+			}
+
+			h4 {
+				font-size: 16px;
+				padding-bottom: 20px;
+			}
+		}
+	}
+
+	.wrap.one {
+		max-width: 300px;
+	}
+
+	.infographic-buttons {
+		padding: 10px 0 0;
+		text-align: center;
+
+		a.button {
+			display: block;
+			margin-top: 10px;
+			text-align: left;
+
+			@include respond-to( 550px ) {
+				display: inline-block;
+				width: 30%;
+				margin: 10px 4%;
+			}
+
+			@include respond-to( 768px ) {
+				width: 20%;
+				margin: 10px 1%;
+			}
+		}
+	}
+
+	@include respond-to( 480px ) {
+		.wrap.two .stat, .wrap.four .stat {
+			float: left;
+		}
+
+		.wrap.two {
+			max-width: 550px;
+
+			.stat {
+				width: 48%;
+			}
+		}
+
+		.wrap.four {
+			
+			.stat {
+				width: 48%;
+			}
+		}
+	}
+	
+	@include respond-to( 768px ) {
+		.wrap.three .stat {
+			float: left;
+		}
+
+		.wrap.three {
+			max-width: 768px;
+
+			.stat {
+				width: 31%;
+			}
+		}
+
+		.wrap.four {		
+			.stat {
+				width: 23%;
+			}
+		}
+	}
+}
+

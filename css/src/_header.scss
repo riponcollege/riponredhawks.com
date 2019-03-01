@@ -1,0 +1,277 @@
+
+$menu-breakpoint: 950px;
+
+header {
+	position: relative;
+	z-index: 1000;
+	background: $red-light;
+	@include clearfix;
+	
+	.wrap {
+		@include clearfix;
+		position: relative;
+	}
+	
+	.logo {
+		text-align: center;
+		padding: 10px 0 30px;
+
+		@include respond-to( 600px ) {
+			padding: 10px 0;
+		}
+
+		@include respond-to( $menu-breakpoint ) {
+			text-align: left;
+			padding: 15px 0 10px 15px;
+		}
+	}
+
+	button.menu-toggle {
+		position: absolute;
+		top: 100px;
+		left: 0;
+		background: $red-dark url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAMAAACgaw2xAAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAsfS51A2+6cnu0ds/UQcva7D7E8RTPvJoAAAAW0lEQVQY063POQKAIAwF0W+ComwqkPtfVWsSOl453SATeYUoo4qpwovJI7lwKsElLFXslLgfSucEEhNBJpBDDG7wpwyUtiutYKWb+d0GL/ONKKY4/3iELoXk+QCXmhAnR7E6TAAAAABJRU5ErkJggg==) center center no-repeat;
+		text-indent: -300px;
+		width: 35px;
+		height: 44px;
+		padding: 0;
+		overflow: hidden;
+		cursor: pointer;
+		border: 0;
+		box-shadow: none;
+		opacity: .7;
+		transition: 400ms background-color ease-in-out;
+
+		@include respond-to( 400px ) {
+			width: 50px;
+		}
+
+		@include respond-to( 600px ) {
+			top: 80px;
+		}
+
+		@include respond-to( $menu-breakpoint ) {
+			display: none;
+		}
+
+		&:hover {
+			button.menu-toggle {
+				background-color: $red-light;
+				opacity: 1;
+			}
+		}
+	}
+
+	.main-menus {
+		@include clearfix;
+		display: none;
+
+		@include respond-to( $menu-breakpoint ) {
+			position: absolute;
+			top: 60px;
+			left: 270px;
+			display: block;
+		}
+
+		li {
+			a {
+				@include font-bold;
+				display: block;
+				padding: 10px 15px;
+				text-decoration: none;
+				color: white;
+				font-size: 10pt;
+				text-transform: uppercase;
+				transition: background-color 400ms ease-in-out;
+
+				&:hover {
+					color: white;
+				}
+
+				@include respond-to( 1040px ) { padding: 10px 20px; }
+			}
+
+			@include respond-to( $menu-breakpoint ) {
+				float: left;
+				position: relative;
+			}
+
+			&.current-menu-item > a {
+				color: white;
+				background-color: $red-light;
+			}
+
+			ul {
+				display: none;
+
+				@include respond-to( $menu-breakpoint ) {
+					position: absolute;
+					top: 44px;
+					left: 0;
+					width: 250px;
+					z-index: 1000;
+					display: block;
+					opacity: 0;
+					pointer-events: none;
+					transition: 400ms opacity ease-in-out;
+				}
+
+				@include respond-to( 1220px ) {
+					width: 320px;
+				}
+
+				a {
+					background-color: lighten( $grey, 50% );
+					display: block;
+					padding: 5px 15px;
+					text-decoration: none;
+					opacity: .9;
+					@include font-medium;
+					font-size: .8em;
+					transition: 400ms background-color ease-in-out, 400ms color ease-in-out, 400ms opacity ease-in-out;
+					color: lighten( $grey, 10% );
+					text-transform: uppercase;
+
+					&:hover {
+						background-color: lighten( $grey, 57% );
+						color: darken( $grey, 10% );
+						opacity: 1;
+					}
+
+					@include respond-to( $menu-breakpoint ) {
+						width: 250px;
+					}
+					
+					@include respond-to( 1040px ) { 
+						padding: 6px 24px; 
+					}
+
+					@include respond-to( 1220px ) { 
+						padding: 7px 32px;
+					}
+				}
+			}
+			
+			@include respond-to( $menu-breakpoint ) {
+				&:hover {
+					& > a {
+						background-color: darken( $red-light, 2% );
+					}
+
+					ul {
+						opacity: 1;
+						pointer-events: auto;
+
+						li {
+							float: none;
+							display: block;
+
+							a {
+								@include font-medium;
+
+								&:hover {
+									color: darken( $grey, 3% );
+								}
+							}
+
+							ul {
+								display: none;
+								position: absolute;
+								top: 0;
+								left: 220px;
+								width: 220px;
+							}
+
+							&:hover {
+								ul {
+									display: block;
+
+									a {
+										background-color: white;
+
+										&:hover {
+											color: darken( $grey, 3% );
+											background-color: lighten( $grey, 50% );
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+  	}
+
+	nav.nav-icon {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		.handle {
+			background: $red-dark url(../img/icon-people.png) center center no-repeat;
+			width: 35px;
+			height: 44px;
+			display: block;
+			opacity: .7;
+			transition: 400ms background-color ease-in-out, 400ms opacity ease-in-out;
+			cursor: pointer;
+
+			@include respond-to( 400px ) {
+				width: 50px;
+			}
+		}
+
+		&:hover, &.open {
+			.handle {
+				background-color: $red-dark;
+				opacity: 1;
+			}
+
+			ul {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		ul {
+			position: absolute;
+			right: 0;
+			top: 44px;
+			width: 250px;
+			transition: 400ms opacity ease-in-out;
+			opacity: 0;
+			pointer-events: none;
+
+			li {
+				a {
+					background-color: lighten( $grey, 50% );
+					display: block;
+					padding: 5px 15px;
+					text-decoration: none;
+					opacity: .85;
+					@include font-medium;
+					font-size: .8em;
+					transition: 400ms background-color ease-in-out, 400ms color ease-in-out, 400ms opacity ease-in-out;
+					color: lighten( $grey, 5% );
+					text-transform: uppercase;
+
+					&:hover {
+						background-color: lighten( $grey, 57% );
+						color: darken( $grey, 10% );
+						opacity: 1;
+					}
+
+					@include respond-to( 1040px ) { padding: 6px 24px; }
+					@include respond-to( 1220px ) { padding: 7px 32px; }
+				}
+			}
+		}
+	}
+
+}
+

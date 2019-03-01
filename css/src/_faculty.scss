@@ -1,0 +1,260 @@
+
+
+.faculty-search {
+	background: $red-dark;
+	padding: 15px;
+	position: relative;
+	@include clearfix;
+
+	input[type=text] {
+		margin: 0;
+		width: 100%;
+		border: 0;
+		line-height: 40px;
+		font-size: 14px;
+		padding: 0 15px;
+		text-transform: uppercase;
+		font-style: italic;
+	}
+
+	button {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		color: white;
+		background: $red-light;
+		margin: 0;
+		border: 0;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
+
+.ripon-widget.faculty {
+	position: relative;
+	padding-top: 15px;
+	border-top: 4px double #ddd;
+
+	&:before {
+		display: block;
+		@include font-awesome;
+		content: "\f002";
+		font-size: 22px;
+		line-height: 40px;
+		text-align: center;
+		background: $teal;
+		color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		position: absolute;
+		top: -22px;
+		left: 50%;
+		margin-left: -20px;
+	}
+
+	.faculty-search-widget-container {
+		background: $teal;
+		padding: 15px;
+		position: relative;
+		@include clearfix;
+
+		input[type=text] {
+			margin: 0;
+			width: 100%;
+			border: 0;
+			line-height: 40px;
+			font-size: 14px;
+			padding: 0 15px;
+			text-transform: uppercase;
+			font-style: italic;
+		}
+
+		button {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			width: 40px;
+			height: 40px;
+			background: $red-light;
+			text-align: center;
+			vertical-align: middle;
+			color: white;
+			margin: 0;
+			border: 0;
+		}
+
+		.directory-link {
+			padding: 5px 0 0;
+			text-align: right;
+			font-size: 13px;
+
+			a {
+				color: white;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+
+.faculty-directory, .search-results-list {
+	padding: 15px 0;
+
+	img {
+		float: left;
+		width: 20%;
+		margin-right: 3%;
+
+		@include respond-to( 768px ) { width: 15%; }
+		@include respond-to( 1099px ) { width: 10%; }
+	}
+
+	.faculty-entry {
+		padding: 15px 0;
+		border-bottom: 1px solid lighten( $grey, 50% );
+		@include clearfix;
+
+		.info {
+			float: right;
+			width: 77%;
+
+			@include respond-to( 768px ) { width: 82%; }
+			@include respond-to( 1099px ) { width: 87%; }
+
+			h4, p {
+				padding: 2px 0;
+			}
+
+		}
+
+		.btn {
+			float: right;
+			margin: 0 0 10px 10px;
+			padding: 8px;
+			line-height: 15px;
+		}
+	}
+}
+
+
+.faculty {
+	@include respond-to( 768px ) { padding: 20px; }
+}
+
+
+.faculty-title {
+	padding: 2px 0;
+	text-transform: uppercase;
+	color: lighten( $grey, 20% );
+	font-size: 12pt;
+}
+
+
+.faculty-info {
+	border: 1px solid #ccc;
+	text-align: center;
+	padding: 20px;
+
+	h2 {
+		padding: 10px 0;
+	}
+
+	.faculty-contact {
+		padding: 2px 0 10px;
+		color: lighten( $grey, 30% );
+		font-size: 10pt;
+	}
+}
+
+
+.faculty {
+	padding: 30px 0;
+
+	.tab-nav {
+		ul li {
+			padding: 20px 15px 20px 50px;
+			font-size: 20px;
+			line-height: 25px;
+			color: lighten( $grey, 20% );
+			cursor: pointer;
+			border-bottom: 1px solid lighten( $grey, 50% );
+			position: relative;
+
+			&:before {
+				position: absolute;
+				@include font-awesome;
+				left: 10px;
+				top: 19px;
+				width: 30px;
+				text-align: center;
+				font-size: 30px;
+				color: lighten( $grey, 20% );
+			}
+
+			&.basic:before {
+				content: $fa-var-user;
+			}
+
+			&.faculty-awards:before {
+				content: $fa-var-trophy;
+			}
+
+			&.faculty-publications:before {
+				content: $fa-var-book;
+			}
+
+			&.faculty-areas:before {
+				content: $fa-var-lightbulb-o;
+			}
+
+			&.faculty-affiliations:before {
+				content: $fa-var-university;
+			}
+
+			&.faculty-presentations:before {
+				content: $fa-var-file-powerpoint-o;
+			}
+
+			&.faculty-pedagogy:before {
+				content: $fa-var-group;
+			}
+
+			&.faculty-credits:before {
+				content: $fa-var-star;
+			}
+
+			&.faculty-experience:before {
+				content: $fa-var-briefcase;
+			}
+
+			&:hover {
+				color: lighten( $grey, 5% );
+
+				&:before {
+					color: lighten( $grey, 5% );
+				}
+			}
+		}
+	}
+	
+	.tab-content ul li {
+		padding: 2px 0 4px 35px;
+		color: lighten( $grey, 10% );
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNEMxNkRGMzU2NzkxMUU0OEVDRDkxNTJDRTNGREJDOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNEMxNkRGNDU2NzkxMUU0OEVDRDkxNTJDRTNGREJDOCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM0QzE2REYxNTY3OTExRTQ4RUNEOTE1MkNFM0ZEQkM4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM0QzE2REYyNTY3OTExRTQ4RUNEOTE1MkNFM0ZEQkM4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+qxkLJgAAAe5JREFUeNpi/P//PwOtARMDHcDwsYQFXUBwwe0B9Yk8EJcD8UEgfgrEP6H0Iai4PC6NjOipC4tPOIG4FYhzgJgVjyN+A/FUIK4G4m+k+EQUiI8CcSEBCxig8gVAfASqjyhL2IB4MxAbkhgFhlB97MRY0gnE5uiCtUr8DCniXIQsAunrIGSJHDQOMAAPKyNDp4c0Q6e6ACGLQPoV8FmShC15g8DtD78YPn7/w5BiIcqwy0GSQZWFCV/2SMRniQsunXNefmOI3vyY4caL7wzG8jwMO4PkGcKEOHApd8VniRK+cDgO9In1zicMc068ZuDnZGGY7iuLK/jU8VkiTEwyKr/5gSET6CsQAAUfFh8J4bPkLTGWgAytsRYDs0Hx9BiI0cA7BlyRCwT3gFgSl+GgyO40E2WwV+UD8w/e/sRQfuo1w+0//9CV3sRnyV4gtsYmAcojVfbi4LgAub7t4EtwYsABduMLrrlA/AerLwTYwBaAXO++7iE+C0D65+Oz5BEQT8Em8eX3f4byHU8Zgo69xBY8yABUWD4gVAqzQYtxczKqkJNAbA+tDvCWXb+A2BeIz5NowXmovp/EFvWvgdgGiCfhiiO0OJgEVf+a1EoLBkCFXQQQewOxMhCLAPEbIL4LxFuBeAUsDsipGSkGAAEGAA3BkfauwMQuAAAAAElFTkSuQmCC) top left no-repeat;
+	}
+}
+
+
+button.back-to-faculty-list {
+	float: left;
+	position: relative;
+	left: 20px;
+	top: -20px;
+}
+
+
+

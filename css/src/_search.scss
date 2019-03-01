@@ -1,0 +1,37 @@
+
+
+.search-results-list {
+	.search-result {
+		border-bottom: 1px solid $grey-light;
+		padding: 10px 0;
+	}
+	.faculty-entry {
+		padding: 10px 0;
+	}
+}
+
+
+.pagination {
+	padding: 10px 0;
+	text-align: center;
+	@include font-title;
+
+	.current {
+		background: $red-dark;
+		color: white;
+		padding: 5px 7px;
+	}
+
+	a {
+		border: 1px solid lighten( $red-light, 50% );
+		color: $red-dark;
+		padding: 4px 6px;
+		text-decoration: none;
+
+		&:hover {
+			background: lighten( $red-light, 50% );
+			border: 1px solid lighten( $red-light, 30% );
+		}
+	}
+}
+

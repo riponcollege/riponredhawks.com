@@ -1,0 +1,77 @@
+
+
+.tab-content {
+	display: none;
+	@extend .entry-content;
+
+	&.first {
+		display: block;
+	}
+}
+
+
+$tab-border-size: 8px;
+
+.tabs {
+	position: relative;
+	padding: 10px 0;
+
+	.tab-nav {
+		display: none;
+
+		@include respond-to( 768px ) {
+			display: block;
+
+			a {
+				display: inline-block;
+				padding: 12px 12px 12px+$tab-border-size;
+				font-size: 20px;
+				color: #444;
+				margin-right: 5px;
+				background: $grey-light;
+				border: $tab-border-size solid white;
+				border-bottom: 0;
+				cursor: pointer;
+				position: relative;
+				z-index: 1;
+
+				&.active {
+					@include font-medium;
+					color: $red-dark;
+					border: $tab-border-size solid $red-dark;
+					border-bottom: 0;
+					z-index: 3;
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	.content {
+		display: block;
+		position: relative;
+		z-index: 2;
+		background: $grey-light;
+		border: $tab-border-size solid $red-dark;
+		padding: 3px 15px;
+		min-height: 120px;
+		margin-bottom: 20px;
+		@extend .entry-content;
+
+		@include respond-to( 768px ) {
+			display: none;
+			margin-top: -$tab-border-size;
+		}
+
+		&.active {
+			display: block;
+		}
+
+		.tab-title-mobile {
+			@include respond-to( 768px ) {
+				display: none;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,20 @@
+
+
+// set colors
+$grey: #5f626f;
+$grey-light: #ebeae9;
+$red-dark: #6a0a1b;
+$red-light: #a91c3a;
+$black: #25252A;
+$blue: #015e83;
+$blue-light: lighten( $blue, 10% );
+$teal: #00a0df;
+$orange: #fecb00;
+
+$link-color: $red-light;
+
+
+// import partials
+@import "mixins", "fonts", "base", "colors", "header", "showcase", "events", "infographic", "menus", "content", "search", "widgets", "photos", "tabs", "accordions", "footer", "emergency", "home", "faculty", "news", "jobs", "area", "map", "fund", "alum", "lightbox";
+
+

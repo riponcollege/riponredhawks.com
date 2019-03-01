@@ -1,0 +1,57 @@
+
+
+.emergency-bar-container {
+	.wrap {
+		position: relative;
+		z-index: 900;
+
+		.emergency-bar {
+			background: $grey;
+			padding: 10px;
+			color: $orange;
+			@include clearfix;
+			display: none;
+			
+			a {
+				color: $orange;
+			}
+
+			&.show {
+				display: block;
+			}
+
+			@include respond-to( 768px ) {
+				position: absolute;
+				opacity: 0;
+				top: -200px;
+				right: 4%;
+				left: 55%;
+				transition: 1000ms ease-in-out opacity, 1000ms ease-in-out top;
+				display: block;
+
+				&.show {
+					opacity: 1;
+					top: 0;
+				}
+			}
+
+			.fa-close {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+
+			.emergency-bar-icon {
+				float: left;
+				width: 5%;
+			}
+
+			.emergency-bar-text {
+				float: right;
+				width: 92%;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+

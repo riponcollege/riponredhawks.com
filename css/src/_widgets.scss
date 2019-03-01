@@ -1,0 +1,85 @@
+
+
+@mixin widget-before {
+	display: block;
+	content: "\f02d";
+	font-family: "FontAwesome";
+	font-size: 22px;
+	line-height: 40px;
+	text-align: center;
+	background: $teal;
+	color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+	top: -22px;
+	left: 50%;
+	margin-left: -20px;
+}
+
+
+.sidebar {
+	.ripon-widget, .widget_video, .tribe-events-list-widget, .tribe-events-adv-list-widget, .tribe_mini_calendar_widget, .widget_recent_entries, .postmetavideo, .cat-post-widget, .widget_categories, .widget_text {
+		margin-top: 50px;
+		position: relative;
+		padding-top: 25px;
+		border-top: 4px double #ddd;
+
+		&:before {
+			@include widget-before;
+		}
+
+		&.none:before {
+			display: none;
+		}
+
+		&.fa-question-circle:before {
+			content: $fa-var-question-circle;
+		}
+
+		&.fa-calculator:before {
+			content: $fa-var-calculator;
+		}
+
+		&.fa-book:before {
+			content: $fa-var-book;
+		}
+
+		&.fa-briefcase:before {
+			content: $fa-var-briefcase;
+		}
+
+		&.fa-camera-retro:before {
+			content: $fa-var-camera-retro;
+		}
+
+		&.fa-gift:before {
+			content: $fa-var-gift;
+		}
+
+		&.fa-mortar-board:before {
+			content: $fa-var-mortar-board;
+		}
+
+		&.fa-map-marker:before {
+			content: $fa-var-map-marker;
+		}
+	}
+}
+
+
+.sidebar .widget_video:before {
+	content: $fa-var-video-camera;
+}
+
+
+.sidebar .tribe-events-list-widget:before, .sidebar .tribe-events-adv-list-widget:before, .sidebar .tribe_mini_calendar_widget:before {
+	content: $fa-var-calendar;
+}
+
+
+.sidebar .widget_recent_entries:before, .sidebar .cat-post-widget, .sidebar .widget_categories {
+	content: $fa-var-newspaper-o;
+}
+

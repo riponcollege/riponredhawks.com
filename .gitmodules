@@ -1,0 +1,15 @@
+[submodule "js/lib/fitvids"]
+	path = js/lib/fitvids
+	url = git@github.com:davatron5000/FitVids.js.git
+[submodule "library/twitter"]
+	path = library/twitter
+	url = git@github.com:abraham/twitteroauth.git
+[submodule "css/lib/font-awesome-sass"]
+	path = css/lib/font-awesome-sass
+	url = git@github.com:FortAwesome/font-awesome-sass.git
+[submodule "js/lib/magnific"]
+	path = js/lib/magnific
+	url = git@github.com:dimsemenov/Magnific-Popup.git
+[submodule "library/cmb2"]
+	path = library/cmb2
+	url = https://github.com/CMB2/CMB2.git

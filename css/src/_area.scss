@@ -1,0 +1,129 @@
+
+.area-tabs {
+	padding-top: 10px;
+
+	.area-tab-navigation {
+		position: relative;
+		z-index: 10;
+
+		li {
+			float: left;
+			width: 48%;
+			margin-left: 2%;
+			padding: 15px;
+			@include font-medium;
+			font-size: 21px;
+			line-height: 19px;
+			background: $red-dark;
+			border: 6px solid $red-dark;
+			border-bottom: 0;
+			color: white;
+			cursor: pointer;
+
+			span { display: none; }
+
+			&.active { 
+				background: white;
+				border: 6px solid $grey;
+				border-bottom: 0;
+				background: lighten( $grey, 55% );
+				color: $grey;
+				line-height: 25px;
+			}
+
+			@include respond-to( 768px ) {
+				width: 32%;
+				margin-left: 1%;
+
+				span { display: inline; }
+
+				&:first-child { 
+					width: 67%;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.column {
+		@include respond-to( 768px ) {
+			width: 50%;
+			display: inline;
+			padding-right: 20px;
+			float: left;
+		}
+	}
+}
+
+.area {
+	padding: 0 0 30px 0;
+
+	.advising {
+		padding-top: 20px;
+	}
+	
+	.video {
+		padding-left: 0;
+		padding-right: 20px;
+	}
+
+	.back-to-areas {
+		display: block;
+		width: 100%;
+		padding: 15px 0 15px 45px;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			left: 5px;
+			top: 50%;
+			margin-top: -15px;
+			width: 30px;
+			height: 30px;
+			font-size: 24px;
+			line-height: 30px;
+			@include font-awesome;
+			content: $fa-var-chevron-left;
+		}
+	}
+
+	.tab-nav {
+		ul li {
+			padding: 20px 15px;
+			font-size: 20px;
+			line-height: 25px;
+			color: lighten( $grey, 20% );
+			cursor: pointer;
+			border-bottom: 1px solid lighten( $grey, 50% );
+			position: relative;
+
+			&.active {
+				background: lighten( $grey, 50% );
+				color: darken( $grey, 30% );
+	
+				&:hover {
+					color: darken( $grey, 30% );
+				}
+			}
+
+			&:before {
+				position: absolute;
+				@include font-awesome;
+				left: 10px;
+				top: 19px;
+				width: 30px;
+				text-align: center;
+				font-size: 30px;
+				color: lighten( $grey, 20% );
+			}
+
+			&:hover {
+				color: lighten( $grey, 5% );
+
+				&:before {
+					color: lighten( $grey, 5% );
+				}
+			}
+		}
+	}
+}
